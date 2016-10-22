@@ -1,9 +1,17 @@
 # voxel-builder
 
-originally inspired by [voxel painter](http://mrdoob.com/projects/voxels/) by [mr doob](http://github.com/mrdoob).
+Based on [a Three.js example](https://threejs.org/examples/#webgl_interactive_voxelpainter)
+Built ot be used in ABC3D 3D printing workshops in libraries. 
+Uses Three.js build 81, OrbitControls.js, Detector.js and STLExporter.js. 
 
 ## Roadmap 
 *Any contributions welcome*
+
+- add hash encoding like on [this on](https://github.com/maxogden/voxel-builder) 
+- add color selection 
+- add color encoding in STL 
+- add STL smoothing option like [here](https://github.com/maxogden/ndarray-stl) 
+- test Minecraft-like controls (first-person)
 
 ## license
 
