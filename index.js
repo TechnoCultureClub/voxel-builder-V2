@@ -20,14 +20,6 @@ function init() {
 	container = document.createElement( 'div' );
 	document.body.appendChild( container );
 
-	var info = document.createElement( 'div' );
-	info.style.position = 'absolute';
-	info.style.top = '10px';
-	info.style.width = '100%';
-	info.style.textAlign = 'center';
-	info.innerHTML = 'Voxel builder<br><strong>click</strong>: add voxel, <strong>shift + click</strong>: remove voxel <a href="javascript:download();">Download STL</a>';
-	container.appendChild( info );
-
 	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
 	camera.position.set( 500, 800, 1300 );
 	camera.lookAt( new THREE.Vector3() );
@@ -38,16 +30,13 @@ function init() {
 	scene = new THREE.Scene();
 
 	// roll-over helpers / ghost cube 
-
-	rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
-	rollOverMaterial = new THREE.MeshBasicMaterial( { color: color, opacity: 0.5, transparent: true } );
-	rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
-	scene.add( rollOverMesh );
+	makeGhost(color);
+	
 
 	// cubes
 
 	cubeGeo = new THREE.BoxGeometry( 50, 50, 50 );
-	cubeMaterial = new THREE.MeshLambertMaterial( { color: color} );
+	
 
 	// grid
 
@@ -112,6 +101,14 @@ function init() {
 	//
 	window.addEventListener( 'resize', onWindowResize, false );
 
+}
+
+function makeGhost(color) {
+	scene.remove( rollOverMesh );
+	rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
+	rollOverMaterial = new THREE.MeshBasicMaterial( { color: color, opacity: 0.5, transparent: true } );
+	rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
+	scene.add( rollOverMesh );	
 }
 
 function onWindowResize() {
@@ -190,6 +187,7 @@ function onDocumentMouseUp (event) {
 
 		} else {
 
+			cubeMaterial = new THREE.MeshLambertMaterial( { color: color} );
 			var voxel = new THREE.Mesh( cubeGeo, cubeMaterial );
 			voxel.position.copy( intersect.point ).add( intersect.face.normal );
 			voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
@@ -208,7 +206,38 @@ function onDocumentKeyDown( event ) {
 
 	switch( event.keyCode ) {
 
-		case 16: isShiftDown = true; break;
+		case 16: 
+		isShiftDown = true; 
+		break; 
+		// colors 
+		case 71: //g
+		color = 0x2ecc71; //green
+		makeGhost(color);
+		break; 
+		case 82: //r
+		color = 0xff0000; // red 
+		makeGhost(color);
+		break; 
+		case 87: //w
+		color = 0xffffff // white 
+		makeGhost(color);
+		break; 
+		case 89: //y
+		color = 0xf1c40f // yellow 
+		makeGhost(color);
+		break; 
+		case 66: //b 
+		color = 0x3498db // blue 
+		makeGhost(color);
+		break; 
+		case 80: //p
+		color = 0x9b59b6 // purple 
+		makeGhost(color);
+		break; 
+		case 75: //k
+		color = 0x000000 //black
+		makeGhost(color);
+		break;
 
 	}
 
