@@ -10,6 +10,8 @@ var cubeGeo, cubeMaterial;
 
 var objects = [];
 
+var color =  0xff0000;
+
 init();
 animate();
 
@@ -35,17 +37,17 @@ function init() {
 
 	scene = new THREE.Scene();
 
-	// roll-over helpers
+	// roll-over helpers / ghost cube 
 
 	rollOverGeo = new THREE.BoxGeometry( 50, 50, 50 );
-	rollOverMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.5, transparent: true } );
+	rollOverMaterial = new THREE.MeshBasicMaterial( { color: color, opacity: 0.5, transparent: true } );
 	rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
 	scene.add( rollOverMesh );
 
 	// cubes
 
 	cubeGeo = new THREE.BoxGeometry( 50, 50, 50 );
-	cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xfeb74c} );
+	cubeMaterial = new THREE.MeshLambertMaterial( { color: color} );
 
 	// grid
 

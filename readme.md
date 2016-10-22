@@ -5,6 +5,8 @@ Based on [a Three.js example](https://threejs.org/examples/#webgl_interactive_vo
 Built to be used in ABC3D 3D printing workshops in libraries. 
 Uses Three.js build 81, OrbitControls.js, Detector.js and STLExporter.js. 
 
+When downloaded, cubes have a base size of 10mm. 
+
 ## Roadmap 
 *Any contributions welcome*
 
