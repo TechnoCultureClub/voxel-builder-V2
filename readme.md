@@ -1,6 +1,8 @@
 # voxel-builder
 
-Based on [a Three.js example](https://threejs.org/examples/#webgl_interactive_voxelpainter)
+Users can add cubes in a 3D grid to build fun objects. 
+
+Based on [this Three.js example](https://threejs.org/examples/#webgl_interactive_voxelpainter.
 
 Built to be used in ABC3D 3D printing workshops in libraries. 
 Uses Three.js build 81, OrbitControls.js, Detector.js and STLExporter.js. 
