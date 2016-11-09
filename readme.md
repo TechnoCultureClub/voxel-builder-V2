@@ -2,7 +2,7 @@
 
 Users can add cubes in a 3D grid to build fun objects. 
 
-Based on [this Three.js example](https://threejs.org/examples/#webgl_interactive_voxelpainter.
+Based on [this Three.js example](https://threejs.org/examples/#webgl_interactive_voxelpainter).
 
 Built to be used in ABC3D 3D printing workshops in libraries. 
 Uses Three.js build 81, OrbitControls.js, Detector.js and STLExporter.js. 
@@ -17,6 +17,7 @@ Tested on Chrome v54.
 - ghost cube only changes color once moved 
 - add favicon 
 - won't download on Safari (opens in new window) 
+- prevent from adding cubes if z<0
 
 ## Roadmap 
 *Any contributions welcome*
