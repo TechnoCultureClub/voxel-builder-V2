@@ -15,9 +15,7 @@ Tested on Chrome v54.
 
 - block infinite zoom 
 - ghost cube only changes color once moved 
-- add favicon 
 - won't download on Safari (opens in new window) 
-- prevent from adding cubes if z<0
 
 ## Roadmap 
 *Any contributions welcome*
