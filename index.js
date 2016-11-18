@@ -186,14 +186,17 @@ function onDocumentMouseUp (event) {
 		// create cube
 
 		} else {
+			
 
 			cubeMaterial = new THREE.MeshLambertMaterial( { color: color} );
 			var voxel = new THREE.Mesh( cubeGeo, cubeMaterial );
 			voxel.position.copy( intersect.point ).add( intersect.face.normal );
 			voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
-			scene.add( voxel );
-
-			objects.push( voxel );
+			
+			if (voxel.position.y > 0) {
+				scene.add( voxel );
+				objects.push( voxel );
+			}		
 
 		}
 

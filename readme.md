@@ -29,6 +29,7 @@ Tested on Chrome v54.
 - add color encoding in STL 
 - add STL smoothing option like [here](https://github.com/maxogden/ndarray-stl) 
 - test Minecraft-like controls (first-person)
+- test Cardboard VR controls 
 
 ## license
 
