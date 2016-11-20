@@ -14,6 +14,33 @@ var color =  0xff0000;
 
 init();
 animate();
+gui();
+
+function gui() {
+
+	var object = {
+		color: '#ff0000',
+		selectColorOptions: ['#ff0000', '#2ecc71', '#ffffff', '#f1c40f', '#3498db', '#9b59b6', '#000000']
+	}
+
+	var controlKit = new ControlKit({});
+
+	controlKit.addPanel({label: 'Controls'})
+        .addColor(object, 'color', {label: 'Color', presets: 'selectColorOptions', onChange: function(index) {
+        	color = index; 
+        	makeGhost(color);
+        }})
+        .addButton('Download STL',function() {
+        	event.stopPropagation();
+        	download();
+        });
+
+    $('.color').click(function(){
+    	$(this).toggleClass('color');
+    });
+
+}
+
 
 function init() {
 
@@ -212,35 +239,6 @@ function onDocumentKeyDown( event ) {
 		case 16: 
 		isShiftDown = true; 
 		break; 
-		// colors 
-		case 71: //g
-		color = 0x2ecc71; //green
-		makeGhost(color);
-		break; 
-		case 82: //r
-		color = 0xff0000; // red 
-		makeGhost(color);
-		break; 
-		case 87: //w
-		color = 0xffffff // white 
-		makeGhost(color);
-		break; 
-		case 89: //y
-		color = 0xf1c40f // yellow 
-		makeGhost(color);
-		break; 
-		case 66: //b 
-		color = 0x3498db // blue 
-		makeGhost(color);
-		break; 
-		case 80: //p
-		color = 0x9b59b6 // purple 
-		makeGhost(color);
-		break; 
-		case 75: //k
-		color = 0x000000 //black
-		makeGhost(color);
-		break;
 
 	}
 
